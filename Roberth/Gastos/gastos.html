@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+		<link href="des.css" rel="stylesheet" type="text/css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Registro de gastos</title>
+
+		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  </head>
+  <body>
+		<div class="container">
+			<h1>Registro de gastos</h1>
+			<h6>Seleccione la fecha:
+			<input type="date" id="fecha" name="trip-start"
+       min="2018-01-01" max="2030-12-31" class="form-control my-3"></h6>
+			<input type="text" name="gasto1" id="gasto" placeholder="Ingrese gasto a registrar" class="form-control my-3">
+			<input type="text" name="descripcion1" id="descripcion" placeholder="Ingrese descripcion del gasto" class="form-control my-3">
+			<input type="text" name="cant_precio1" id="cant_precio" placeholder="Ingrese el precio por unidad" class="form-control my-3" onkeypress="return valideKey(event);">
+			<input type="text" name="cant_unidad1" id="cant_unidad" placeholder="Ingrese la cantidad de unidades" class="form-control my-3" onkeypress="return valideKey(event);">
+			<input type="text" id="sumam" placeholder="Suma Automatica, no se muestra"disabled class="form-control my-3"><br>
+			<button class="btn btn-info" id="boton" onclick="guardar()">Registrar gasto</button><br><br>
+
+      <h6>Filtrar busqueda por fecha:
+			<input type="date" id="filtro" name="trip-start"
+       min="2018-01-01" max="2030-12-31" class="form-control my-3">
+       <button class="btn btn-info" onclick="consulta()">Realizar consulta</button><br><br></h6><br>
+			<table class="table my-3">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Gasto</th>
+      <th scope="col">Descripción</th>
+			<th scope="col">Precio Unitario</th>
+			<th scope="col">Cantidad Unidad</th>
+			<th scope="col">Total Precio</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody id="tabla">
+
+  </tbody>
+</table>
+
+		</div>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCL5skhwb8FQ4ZBY2RDq2Qg7DT1AnSSYXk",
+    authDomain: "paginasistema-88636.firebaseapp.com",
+    databaseURL: "https://paginasistema-88636-default-rtdb.firebaseio.com",
+    projectId: "paginasistema-88636",
+    storageBucket: "paginasistema-88636.appspot.com",
+    messagingSenderId: "343800233420",
+    appId: "1:343800233420:web:07303dbb9944c527b6f169",
+    measurementId: "G-1XNBJMY8PF"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+</script>
+
+    <script src="appgasto.js"></script>
+  </body>
+</html>

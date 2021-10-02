@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script>
+  var config = {
+    apiKey: "AIzaSyCL5skhwb8FQ4ZBY2RDq2Qg7DT1AnSSYXk",
+    authDomain: "paginasistema-88636.firebaseapp.com",
+    projectId: "paginasistema-88636",
+    storageBucket: "paginasistema-88636.appspot.com",
+    messagingSenderId: "343800233420",
+    appId: "1:343800233420:web:07303dbb9944c527b6f169",
+    measurementId: "G-1XNBJMY8PF"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(config);
+</script>
+
+  </head>
+  <body>
+    <h4>Registro de usuarios</h4>
+    <input id="email" type="email" placeholder="Ingresa email">
+    <input id="contrasena" type="password" placeholder="Ingresa contraseña">
+    <button onclick="registrar()">Enviar</button>
+    <a href="menu.html">Regresar al menu</a>
+
+    <div id="contenido">
+
+    </div>
+
+    <script src="appregistro.js"></script>
+  </body>
+</html>
