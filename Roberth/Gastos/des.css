@@ -1,0 +1,4 @@
+/* Selecciona cualquier <input> deshabilitado */
+input:disabled {
+  background: #ccc;
+}
