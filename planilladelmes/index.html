@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inicio</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src = "js/bootstrap.min.js"></script>
+	<script type="text/javascript" src = "jquery-3.5.1.min.js"></script>
+</head>
+</head>
+<body background="imagenes/fondo.png" class="row bg-dark justify-content-center aling-items-center vh-100 ">
+	<div class="col-sm-4">
+		<div class="container " style="width: 530px;">
+			<br>
+			<h1 class="alert alert-light text-center">Planilla del Mes</h1>
+			<hr>
+			
+			<tr>
+				<br><br><br>
+				<td class="text-center" >
+					<a class="btn btn-outline-dark btn-lg" href="datos.php?id=<?php echo $filas['id']; ?>" role="button">Ingreso de Empleados</a>
+					<a class="btn btn-outline-dark btn-lg" href="read.php?id=<?php echo $filas['id']; ?>" role="button">Busqueda de Empleados</a>
+				</td>
+				<br>
+				<td class="text-center" >
+					<a class="btn btn-outline-dark btn-lg" href="pagos.php?id=<?php echo $filas['id']; ?>" role="button">Pago de Adelantos</a>
+					<a class="btn btn-outline-dark btn-lg" href="adelantos.php?id=<?php echo $filas['id']; ?>" role="button">Adelantos</a>
+				</td>
+
+			</tr>	
+			
+			
+		</div>
+	</div>
+
+</body>
+</html>
