@@ -75,6 +75,10 @@ else{
         document.getElementById('cant_precio').value ='';
         document.getElementById('cant_unidad').value ='';
         suma='';
+        document.getElementsByName('gasto1')[0].placeholder='Ingrese gasto a registrar';
+        document.getElementsByName('descripcion1')[0].placeholder='Ingrese descripcion del gasto';
+        document.getElementsByName('cant_precio1')[0].placeholder='Ingrese el precio por unidad';
+        document.getElementsByName('cant_unidad1')[0].placeholder='Ingrese la cantidad de unidades';
 
     })
     .catch((error) => {
@@ -165,7 +169,7 @@ function editar(id,fecha,gasto,descripcion,precio_unidad,cantidad_unidad,total_p
 
   var boton = document.getElementById('boton');
   boton.innerHTML = 'Editar';
-  boton.onclick = function() {
+  boton.onclick = function(){
 
     var washingtonRef = db.collection("Gastos").doc(id);
 
@@ -189,6 +193,14 @@ function editar(id,fecha,gasto,descripcion,precio_unidad,cantidad_unidad,total_p
     .then(() => {
         console.log("Document successfully updated!");
         boton.innerHTML = 'Guardar';
+        document.getElementById('fecha').value ='';
+        document.getElementById('gasto').value ='';
+        document.getElementById('descripcion').value ='';
+        document.getElementById('cant_precio').value ='';
+        document.getElementById('cant_unidad').value ='';
+        suma='';
+        window.location.reload(true);
+
 
     })
     .catch((error) => {

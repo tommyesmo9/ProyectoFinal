@@ -5,7 +5,7 @@ function registrar() {
 
   firebase.auth().createUserWithEmailAndPassword(email, contrasena)
   .then(function(){
-    verificar()
+    verificar();
   })
 
   .catch(function(error) {
@@ -23,7 +23,6 @@ function registrar() {
 function observador() {
   firebase.auth().onAuthStateChanged(function(user){
   if (user) {
-    aparece(user);
     var displayName = user.displayName;
     var email = user.email;
     console.log(email);
@@ -35,6 +34,7 @@ function observador() {
 
   } else {
     console.log('no existe')
+    window.location.href = "index.html";
   }
 });
 
@@ -57,7 +57,8 @@ function verificar() {
 
   var user = firebase.auth().currentUser;
   user.sendEmailVerification().then(function(){
-    console.log('Enviando correo..')
+    console.log('Enviando correo..');
+    window.location.href = "menu.html";
   }).catch(function(error){
 
   });
