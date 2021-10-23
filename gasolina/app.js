@@ -8,15 +8,17 @@ firebase.initializeApp({
 var db = firebase.firestore();
 
 function guardar() {
-    //var fecha = document.getElementById('fecha').value;
-    //var camion = document.getElementById('camion').value;
+    var fecha = document.getElementById('fecha').value;
+    var camion = document.getElementById('camion').value;
+    var picture = document.getElementById('picture').value;
     var precio = document.getElementById('precio').value;
     var cantidad = document.getElementById('cantidad').value;    
-    var coments = document.getElementById('fecha').value;
+    var coments = document.getElementById('comments').value;
 
     db.collection("gasolina").add({
-        //date: fecha,
-        //veiculo: camion,
+        date: fecha,
+        veiculo: camion,
+        foto: picture,
         price: precio,
         amount: cantidad,
         more: coments
