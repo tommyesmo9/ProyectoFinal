@@ -13,10 +13,15 @@ function guardar() {
     var precio = document.getElementById('precio').value;
     var cantidad = document.getElementById('cantidad').value;
     var coments = document.getElementById('coments').value;
+    var picture = document.getElementById('picture').value;
+    var precio = document.getElementById('precio').value;
+    var cantidad = document.getElementById('cantidad').value;    
+    var coments = document.getElementById('comments').value;
 
     db.collection("gasolina").add({
-        //date: fecha,
-        //veiculo: camion,
+        date: fecha,
+        veiculo: camion,
+        foto: picture,
         price: precio,
         amount: cantidad,
         more: coments
