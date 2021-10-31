@@ -23,7 +23,6 @@ firebase.initializeApp({
   //agregar gastos
   function guardar() {
   
-    var id = document.getElementById('id').value;
     var nombre = document.getElementById('nombre').value;
     var fechanacimiento = document.getElementById('fechanacimiento').value;
     var direccion = document.getElementById('direccion').value;
@@ -32,11 +31,7 @@ firebase.initializeApp({
 
   
     //verificar campos vacios
-    if (id=="" || nombre=="" || fechanacimiento=="" || direccion=="" || telefono=="" || sueldo =="") {
-      if (id=="") {
-        document.getElementsByName('id')[0].placeholder='*Eror, el campo DPI no puede estar vacio';
-        console.log("Gasto vacio");
-           };
+    if (nombre=="" || fechanacimiento=="" || direccion=="" || telefono=="" || sueldo =="") {
       if (nombre=="") {
         document.getElementsByName('nombre')[0].placeholder='*Eror, el campo nombre no puede estar vacio';
         console.log("Gasto vacio");
@@ -63,7 +58,6 @@ firebase.initializeApp({
   else{
   
       db.collection("empleados").add({
-          id: id,
           nombre: nombre,
           fechanacimiento: fechanacimiento,
           direccion: direccion,
@@ -73,14 +67,13 @@ firebase.initializeApp({
       })
       .then((docRef) => {
           console.log("Document written with ID: ", docRef.id);
-          document.getElementById('id').value ='';
           document.getElementById('nombre').value ='';
           document.getElementById('fechanacimiento').value ='';
           document.getElementById('direccion').value ='';
           document.getElementById('telefono').value ='';
           document.getElementById('sueldo').value ='';
           
-          document.getElementsByName('id')[0].placeholder='Ingrese DPI';
+          
           document.getElementsByName('nombre')[0].placeholder='Ingrese el nombre del empleado';
           document.getElementsByName('fechanacimiento')[0].placeholder='Ingrese fecha de nacimiento';
           document.getElementsByName('direccion')[0].placeholder='Ingrese la dirección';
@@ -94,3 +87,4 @@ firebase.initializeApp({
     }
   
   }
+

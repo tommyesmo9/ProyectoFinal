@@ -34,7 +34,7 @@ firebase.initializeApp({
         console.log("Gasto vacio");
            };
       if (adelanto=="") {
-        document.getElementsByName('adelanto')[0].placeholder='*Eror, el campo adelanto pago no puede estar vacio';
+        document.getElementsByName('adelanto')[0].placeholder='*Eror, el campo adelanto a empleado no puede estar vacio';
         console.log("Gasto vacio");
            };
       if (fecha=="") {
@@ -46,7 +46,7 @@ firebase.initializeApp({
     }
   else{
   
-      db.collection("adelanto_pago").add({
+      db.collection("adelanto_empleado").add({
           nombre: id,
           adelanto: adelanto,
           fecha: fecha
@@ -59,8 +59,8 @@ firebase.initializeApp({
           document.getElementById('fecha').value ='';
           
           document.getElementsByName('id')[0].placeholder='Ingrese nombre';
-          document.getElementsByName('adelanto')[0].placeholder='Ingrese el monto del pago';
-          document.getElementsByName('fecha')[0].placeholder='Ingrese fecha de pago';
+          document.getElementsByName('adelanto')[0].placeholder='Ingrese adelanto realizado al empleado';
+          document.getElementsByName('fecha')[0].placeholder='Ingrese fecha de realizado adelanto';
             
       })
       .catch((error) => {
