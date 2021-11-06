@@ -17,8 +17,44 @@
         <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
     </head>
 
-    <body>
-        <br><br>
+    <body><br>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="fecha" class="form-label">Fecha</label>
+                <input type="datetime-local" class="form-control" id="fecha">
+            </div>
+            <div class="col-md-6"><br><br>
+                <label for="camion" class="form-label">Seleccionar Camion</label>
+                <select id="camion" class="form-select">
+                    <option value="Camion 1">Camion 1</option>
+                    <option value="Camion 2">Camion 2</option>
+                    <option value="Camion 3">Camion 3</option>
+                    <option value="Camion 4">Camion 4</option>
+                    <option value="Camion 5">Camion 5</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="precio" class="form-label">Precio</label>
+                <input class="form-control" id="precio" type="text" placeholder="Precio por galon">
+            </div>
+            <div class="col-md-6">
+                <label for="cantidad" class="form-label">Gasolina comprada</label>
+                <input type="text" class="form-control" id="cantidad" placeholder="Galones">
+            </div>
+            <div class="col-md-6">
+                <label for="comments" class="form-label">Comentarios</label>
+                <textarea type="text" class="form-control" id="cantidad" placeholder="Comentar aqui..."></textarea>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" id="buton" onclick="guardar()">Guardar</button>
+            </div>
+        </form>
+
+
+
+
+
+        <!--<br><br>
         <div class="container">
         <h1>Transportes xyx</h1>
         </div><br>
@@ -36,9 +72,7 @@
                     <option value="Camion 4">Camion 4</option>
                     <option value="Camion 5">Camion 5</option>
                 </select>
-                <div class="col-lg-5">
-                    <input type="file" id="picture" multiple id="add-new-photo" name="image[]">
-                </div>
+                <a href="camiones.html">Ingreser nuevo camion</a>
             </div><br>
             <div class="row justify-content-start">
                 <div class="col-4">
@@ -50,9 +84,13 @@
                     <input class="form-control form-control-lg" id="cantidad" type="text" placeholder="Gasolina">
                 </div>
             </div><br>
+            <div class="col-lg-5">
+                <input type="file" id="picture" multiple id="add-new-photo" name="image[]">
+            </div><br>
             <textarea class="form-comtrol" id="comments" placeholder="Comentarios"></textarea>
             <br><br><br><br>
-            <button type="button" class="btn btn-primary btn-lg btn-block" id="buton" onclick="guardar()">Block level button</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="buton" onclick="guardar()">Guardar</button>
+            <button type="button" class="btn btn-block" id="report"><a href="reporte.html">Reporte</a></button>-->
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

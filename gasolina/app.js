@@ -30,3 +30,24 @@ function guardar() {
             console.error("Error adding document: ", error);
         });
 }
+
+// LEER DATOS
+var tabla=document.getElementById('tabla');
+
+db.collection("gasolina").get().then((querySnapshot) => {
+    tabla.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        tabla.innerHTML += `
+        <tr>
+            <th scope="row">${doc.id}</th>
+            <td>${doc.data().date}</td>
+            <td>${doc.data().veiculo}</td>
+            <td>${doc.data().price}</td>
+            <td>${doc.data().amount}</td>
+            <td>${doc.data().foto}</td>
+            <td>${doc.data().more}</td>
+            </tr>
+        `
+    });
+});
