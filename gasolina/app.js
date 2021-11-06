@@ -10,6 +10,9 @@ var db = firebase.firestore();
 function guardar() {
     var fecha = document.getElementById('fecha').value;
     var camion = document.getElementById('camion').value;
+    var precio = document.getElementById('precio').value;
+    var cantidad = document.getElementById('cantidad').value;
+    var coments = document.getElementById('coments').value;
     var picture = document.getElementById('picture').value;
     var precio = document.getElementById('precio').value;
     var cantidad = document.getElementById('cantidad').value;    
