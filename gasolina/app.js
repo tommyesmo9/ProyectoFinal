@@ -12,16 +12,11 @@ function guardar() {
     var camion = document.getElementById('camion').value;
     var precio = document.getElementById('precio').value;
     var cantidad = document.getElementById('cantidad').value;
-    var coments = document.getElementById('coments').value;
-    var picture = document.getElementById('picture').value;
-    var precio = document.getElementById('precio').value;
-    var cantidad = document.getElementById('cantidad').value;    
-    var coments = document.getElementById('comments').value;
+    var coments = document.getElementById('coments').value;    
 
     db.collection("gasolina").add({
         date: fecha,
         veiculo: camion,
-        foto: picture,
         price: precio,
         amount: cantidad,
         more: coments
@@ -37,10 +32,10 @@ function guardar() {
 // LEER DATOS
 var tabla=document.getElementById('tabla');
 
-db.collection("gasolina").get().then((querySnapshot) => {
+db.collection("gasolina").onSnapshot((querySnapshot) => {
     tabla.innerHTML = '';
     querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data()}`);
+        console.log(`${doc.id} => ${doc.data().first}`);
         tabla.innerHTML += `
         <tr>
             <th scope="row">${doc.id}</th>
@@ -48,9 +43,19 @@ db.collection("gasolina").get().then((querySnapshot) => {
             <td>${doc.data().veiculo}</td>
             <td>${doc.data().price}</td>
             <td>${doc.data().amount}</td>
-            <td>${doc.data().foto}</td>
             <td>${doc.data().more}</td>
+            <td><button class="btn btn-warning">Editar</button></td>
+            <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></td>
             </tr>
         `
     });
 });
+
+//Borrar datos
+function eliminar(id){
+    db.collection("gasolina").doc(id).delete().then(function(){
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
+    });
+}
