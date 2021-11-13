@@ -12,7 +12,7 @@ function guardar() {
     var camion = document.getElementById('camion').value;
     var precio = document.getElementById('precio').value;
     var cantidad = document.getElementById('cantidad').value;
-    var coments = document.getElementById('coments').value;    
+    var coments = document.getElementById('comments').value;    
 
     db.collection("gasolina").add({
         date: fecha,
@@ -29,6 +29,7 @@ function guardar() {
         });
 }
 
+function mostrar(){
 // LEER DATOS
 var tabla=document.getElementById('tabla');
 
@@ -50,7 +51,7 @@ db.collection("gasolina").onSnapshot((querySnapshot) => {
         `
     });
 });
-
+};
 //Borrar datos
 function eliminar(id){
     db.collection("gasolina").doc(id).delete().then(function(){

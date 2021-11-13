@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+
+        <!--Firestore-->
+        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+    </head>
+
+    <body>
+        <br><br>
+        <div class="container">
+        <h1>Transportes xyx</h1>
+        </div><br>
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-4">
+                    <input  id="fecha" class="form-control"  type="datetime-local">
+                </div>
+            </div><br>
+            <div class="row justify-content-center">
+<select id="camion">
+   <option value="Camion 1">Camion 1</option> 
+   <option value="Camion 2">Camion 2</option> 
+   <option value="Camion 3">Camion 3</option>
+   <option value="Camion 10">Camion 4</option> 
+   <option value="Camion 11">Camion 5 </option> 
+   <option value="Camion 12">Camion 6</option> 
+</select>
+                <div class="col-lg-5">
+                    <input type="file" id="picture" multiple id="add-new-photo" name="image[]">
+                </div>
+            </div><br>
+            <div class="row justify-content-start">
+                <div class="col-4">
+                    <input class="form-control form-control-lg" id="precio" type="text" placeholder="Monto">
+                </div>
+            </div><br>
+            <div class="row justify-content-start">
+                <div class="col-4">
+                    <input class="form-control form-control-lg" id="cantidad" type="text" placeholder="Gasolina">
+                </div>
+            </div><br>
+            <textarea class="form-comtrol" id="comments" placeholder="Comentarios"></textarea>
+            <br><br><br><br>
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="buton" onclick="guardar()">Block level button</button>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+            <script src="app.js"></script>
+    </body>
+
+</html>
