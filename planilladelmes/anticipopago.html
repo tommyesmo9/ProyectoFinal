@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <title>Consulta empleado</title>
+    <title>Consulta Anticipo</title>
 
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -25,36 +25,37 @@
 </nav>
 		<div class="container">
 
-      <h1>Campos para editar empleado</h1>
-      <input type="hidden" name="id" id="id">
-			<input type="text" name="nombre" id="nombre" placeholder="Ingrese el Nombre del Empleado" class="form-control" style="width: 400px;">
-      <input type="text" name="fechanacimiento" id="fechanacimiento" placeholder="Ingrese la fecha de nacimiento" class="form-control" style="width: 400px;">
-			<input type="text" name="direccion" id="direccion" placeholder="Ingrese la dirección del empleado" class="form-control" style="width: 400px;">
-			<input type="text" name="telefono" id="telefono" placeholder="Ingrese el teléfono" class="form-control" onkeypress="return valideKey(event);" style="width: 400px;">
-      <input type="text" name="sueldo" id="sueldo" placeholder="Sueldo empleado" class="form-control" onkeypress="return valideKey(event);" style="width: 400px;">
-			<button class="btn btn-info" id="boton" >Editar</button><br>
-
-
-			<h1>Busqueda de empleados</h1>
+      		<h1>Busqueda de empleados</h1>
 			<input type="text" name="filtro" id="filtro" placeholder="Ingrese el Nombre del Empleado, tal y como lo registro" class="form-control my-3">
 			<button class="btn btn-info" id="boton" onclick="consulta()">Buscar empleado</button><br><br>
 
+            <h1>Adelanto a empleado</h1>
             <table class="table my-3">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Adelanto</th>
+                    <th scope="col">Fecha</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Fecha Nacimiento</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Sueldo</th>
-                    <th scope="col">Eliminar</th>
-                    <th scope="col">Editar</th>
                   </tr>
                 </thead>
                 <tbody id="tabla">
-              
-                </tbody>
+              </table>
+
+              <table class="table my-3">
+                <h1>Pago de adelanto</h1>
+                <table class="table my-3">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Adelanto</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Nombre</th>
+                      </tr>
+                    </thead>
+                    <tbody id="pago">
+          
+            </tbody>
               </table>
 </div>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -62,7 +63,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
 
-  <script src="appmostrarempleado.js"></script>
+  <script src="appanticipopago.js"></script>
 
   </body>
 </html>

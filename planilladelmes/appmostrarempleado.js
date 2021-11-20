@@ -41,6 +41,7 @@ function consulta() {
             <td>${doc.data().sueldo}</td>
             <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></td>
             <td><button class="btn btn-warning" onclick="editar('${doc.id}','${doc.data().nombre}','${doc.data().direccion}','${doc.data().fechanacimiento}','${doc.data().telefono}','${doc.data().sueldo}')">Editar</button></td>
+            
             </tr>
             `
   
@@ -48,8 +49,7 @@ function consulta() {
       });
   
       } else{
-      db.collection("empleados")
-      .where("nombre", "==", filtro).onSnapshot((querySnapshot) => {
+      db.collection("empleados").orderBy('nombre').startAt(filtro).endAt(filtro+'\uf8ff').onSnapshot((querySnapshot) => {
         tabla.innerHTML = '';
           querySnapshot.forEach((doc) => {
               console.log(`${doc.id} => ${doc.data()}`);
@@ -136,3 +136,4 @@ function editar(id,nombre, fechanacimiento, direccion, telefono, sueldo) {
   
 
 }
+
